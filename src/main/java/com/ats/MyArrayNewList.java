@@ -143,7 +143,7 @@ public class MyArrayNewList<E>
 
     //This method checks if the index is within the length range of the list
     private boolean checkedElement(int index) {
-        if(index < myArrayList.length && index > -1)
+        if(index <= myArrayList.length && index > -1)
             return true;
         else
             return false;

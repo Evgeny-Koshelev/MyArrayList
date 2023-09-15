@@ -29,6 +29,11 @@ public class MyArrayNewListTest {
         myArrayNewList.addElement(7);
         myArrayNewList.addElement(5);
 
+        MyArrayNewList<Object> objectMyArrayNewList = new MyArrayNewList<>();
+        for (int i = 0; i < 1000; i++) {
+            objectMyArrayNewList.addElement(new Object());
+        }
+
 
         for (int i = 0; i < 5;i++) {
             assertEquals(array[i],myArrayNewList.get(i));

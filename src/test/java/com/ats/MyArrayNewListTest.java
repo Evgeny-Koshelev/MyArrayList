@@ -117,13 +117,22 @@ public class MyArrayNewListTest {
     public void testRemoveElementByIndex() {
         MyArrayNewList<String> myArrayNewList1 = new MyArrayNewList<>(List.of(array1));
         MyArrayNewList<Integer> myArrayNewListInteger = new MyArrayNewList<>();
+        MyArrayNewList<Integer> myArrayNewListInteger2 = new MyArrayNewList<>();
         myArrayNewListInteger.addElement(7);
+        myArrayNewListInteger2.addElement(3);
+        myArrayNewListInteger2.addElement(1);
+        myArrayNewListInteger2.addElement(7);
+        myArrayNewListInteger2.addElement(9);
+        myArrayNewListInteger2.addElement(10);
         myArrayNewList1.removeElement(2);
         myArrayNewListInteger.removeElement(0);
+        myArrayNewListInteger2.removeElement(4);
         assertNull(myArrayNewListInteger.get(0));
         String [] array11 = {"hello", "hi","world", "hi"};
+        Integer[] checkArrInt = {3, 1, 7, 9};
         for (int i = 0; i < myArrayNewList1.size();i++) {
             assertEquals(array11[i], myArrayNewList1.get(i));
+            assertEquals(checkArrInt[i],myArrayNewListInteger2.get(i));
         }
 
 

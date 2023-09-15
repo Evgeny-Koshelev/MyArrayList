@@ -51,8 +51,9 @@ public class MyArrayNewList<E>
      */
     @SuppressWarnings("unchecked")
     public E get(int index) {
-        if(checkedElement(index)) {
+        if(checkedElement(index) && index < size) {
             return (E) myArrayList[index];
+
 
         }
         else {
@@ -93,12 +94,13 @@ public class MyArrayNewList<E>
     /*this method removes the element at the specified index,
     shifts all following elements one to the left*/
     public void removeElement(int index) {
-        if(checkedElement(index)) {
+        if(checkedElement(index) && index < size) {
             if(size>1) {
                 Object[] tempMyArrayList = myArrayList;
                 int count = size;
                 System.arraycopy(myArrayList, index + 1, tempMyArrayList, index, count - (index + 1));
                 size--;
+
             }
             else
                 removeAll();
@@ -125,7 +127,7 @@ public class MyArrayNewList<E>
 
     //This method replaces an element by index. The old element is overwritten
     public void set(Object e, int index) {
-        if(checkedElement(index)) {
+        if(checkedElement(index) && index <size) {
             Object [] tempMyArrayList = myArrayList;
             tempMyArrayList[index] = e;
 
